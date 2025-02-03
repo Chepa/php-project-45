@@ -54,6 +54,7 @@ if ($countPositive == $total) {
     line($line);
 }
 
+line("\n");
 line(implode("\n", $output));
 
 function game($number, $answer)
