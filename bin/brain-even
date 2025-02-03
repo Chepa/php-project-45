@@ -1,0 +1,66 @@
+#!/opt/homebrew/opt/php@8.3/bin/php
+
+<?php
+
+include 'vendor/autoload.php';
+
+use function cli\line;
+use function cli\prompt;
+
+$output = [];
+$line = 'Welcome to the Brain Games!';
+$output[] = $line;
+line($line);
+$line = 'May I have your name?';
+$output[] = $line;
+$name = prompt($line);
+$line = sprintf("Hello, %s!", $name);
+$output[] = $line;
+line($line);
+$line = 'Answer "yes" if the number is even, otherwise answer "no".';
+$output[] = $line;
+line($line);
+
+$total = 3;
+$countPositive = 0;
+$questions = [];
+for ($i = 0; $i < $total; $i++) {
+    $number = rand(1, 100);
+    $line =  'Question: ' . $number;
+    $output[] = $line;
+    $question = $line;
+    $answer = prompt($line);
+
+    $results = game($number, $answer);
+
+    if ($results) {
+        $line = 'Correct!';
+        $output[] = $line;
+        line($line);
+        $countPositive++;
+    } else {
+        $line = "'yes' is wrong answer ;(. Correct answer was 'no'.";
+        $output[] = $line;
+        line($line);
+        $line = sprintf("Let's try again, %s!", $name);
+        $output[] = $line;
+        line($line);
+    }
+}
+
+if ($countPositive == $total) {
+    $line = sprintf("Congratulations, %s!", $name);
+    $output[] = $line;
+    line($line);
+}
+
+line(implode("\n", $output));
+
+function game($number, $answer)
+{
+    if (($number % 2 == 0 && $answer == 'yes') || ($number % 2 !== 0 && $answer == 'no')) {
+        return true;
+    } else {
+        return false;
+    }
+}
