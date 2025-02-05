@@ -14,12 +14,14 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools": "^0.12.1"
+        "wp-cli/php-cli-tools": "^0.12.1",
+        "ext-gmp": "*"
     },
     "bin": [
         "bin/brain-even",
         "bin/brain-games",
-        "bin/brain-calc"
+        "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.11"
