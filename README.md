@@ -20,3 +20,9 @@
   https://asciinema.org/a/QGFK8Ep0g8s8AKBAQQIpfJzSy
 - не успешное выполение:
   https://asciinema.org/a/Il4BfoYyc0d6tnLYz1Hepy7qj
+
+## Аскинема шага №8
+- успешное выполнение:
+  https://asciinema.org/a/IX8ipAt9TYAErhfMVN0YQnmxR
+- не успешное выполение:
+  https://asciinema.org/a/iVcXAAdUrgQ0T69CzcljbsxLx
