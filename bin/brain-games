@@ -2,8 +2,6 @@
 
 <?php
 
-var_dump($_SERVER['DOCUMENT_ROOT']);
-
 require_once 'vendor/autoload.php';
 
 use function cli\line;
