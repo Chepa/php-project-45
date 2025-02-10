@@ -1,4 +1,4 @@
-#!/opt/homebrew/opt/php@8.3/bin/php
+#!/usr/bin/env php
 
 <?php
 
@@ -6,12 +6,13 @@ include 'vendor/autoload.php';
 
 use function cli\line;
 use function cli\prompt;
+use KhanhIceTea\Twigeval\Calculator as Calculator;
 
 function expression($first, $second, $operation): string
 {
-    $string = "$first $operation $second";
+    $calculator = new Calculator(null);
 
-    return eval('return '.$string.';');
+    return $calculator->calculate("$first $operation $second");
 }
 
 $operations = ['+', '-', '*'];

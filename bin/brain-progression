@@ -1,4 +1,4 @@
-#!/opt/homebrew/opt/php@8.3/bin/php
+#!/usr/bin/env php
 
 <?php
 

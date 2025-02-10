@@ -14,7 +14,8 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools": "^0.12.1"
+        "wp-cli/php-cli-tools": "^0.12.1",
+        "khanhicetea/twigeval": "^1.4"
     },
     "bin": [
         "bin/brain-even",
