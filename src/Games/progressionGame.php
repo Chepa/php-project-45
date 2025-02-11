@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Engine\greeting as greeting;
 
-function progressionGame(): void
+function progressionGame(): bool
 {
     $name = greeting();
     line('What number is missing in the progression?');
@@ -34,7 +34,16 @@ function progressionGame(): void
         $answer = prompt('Question: ' . implode(' ', $numbers));
         $success += $answer == $result ? 1 : 0;
         line("Your answer: $answer");
-        line($answer == $result ? 'Correct!' : "'$answer' is wrong answer ;(. Correct answer was '$result'.");
-        line($success == $totalGames ? "Congratulations, $name!" : "Let's try again, $name!");
+
+        if ($success != $totalGames) {
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("Let's try again, $name!");
+
+            return false;
+        }
+        line('Correct!');
     }
+    line("Congratulations, $name!");
+
+    return true;
 }

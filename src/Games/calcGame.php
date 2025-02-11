@@ -7,14 +7,13 @@ use function cli\prompt;
 use function Engine\greeting as greeting;
 use function Engine\expression as expression;
 
-function calcGame(): void
+function calcGame(): bool
 {
     $operations = ['+', '-', '*'];
 
     $name = greeting();
     line('What is the result of the expression?');
 
-    $success = 0;
     foreach ($operations as $operation) {
         $first = rand(1, 100);
         $second = rand(1, 100);
@@ -26,15 +25,15 @@ function calcGame(): void
         $answer = prompt('Your answer');
 
         if ($answer == $result) {
-            $success++;
             line('Correct!');
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$result'");
             line("Let's try again, $name!");
+
+            return false;
         }
     }
-    if ($success == count($operations)) {
-        line("Congratulations, $name!");
-    }
+
+    return true;
 }
 
