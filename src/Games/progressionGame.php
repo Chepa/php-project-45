@@ -12,7 +12,6 @@ function progressionGame(): bool
     line('What number is missing in the progression?');
 
     $totalGames = 3;
-    $success = 0;
 
     for ($i = 0; $i < $totalGames; $i++) {
         $step = rand(1,10);
@@ -29,13 +28,12 @@ function progressionGame(): bool
         }
 
         $result = $numbers[$missingPosition];
-        $numbers[$missingPosition] = '...';
+        $numbers[$missingPosition] = '..';
 
         $answer = prompt('Question: ' . implode(' ', $numbers));
-        $success += $answer == $result ? 1 : 0;
         line("Your answer: $answer");
 
-        if ($success != $totalGames) {
+        if ($answer != $result) {
             line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
             line("Let's try again, $name!");
 
