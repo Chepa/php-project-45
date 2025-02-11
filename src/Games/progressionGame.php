@@ -14,10 +14,10 @@ function progressionGame(): bool
     $totalGames = 3;
 
     for ($i = 0; $i < $totalGames; $i++) {
-        $step = rand(1,10);
+        $step = rand(1, 10);
         $countNumbers = 10;
-        $missingPosition = rand(0,$countNumbers - 1);
-        $startFrom = rand(1,100);
+        $missingPosition = rand(0, $countNumbers - 1);
+        $startFrom = rand(1, 100);
 
         $total = $startFrom;
         $numbers = [$startFrom];

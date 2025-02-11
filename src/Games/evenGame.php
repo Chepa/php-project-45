@@ -14,7 +14,7 @@ function evenGame(): bool
     $total = 3;
     for ($i = 0; $i < $total; $i++) {
         $number = rand(1, 100);
-        $line =  'Question: ' . $number;
+        $line = 'Question: ' . $number;
         $answer = prompt($line);
 
         $results = game($number, $answer);

@@ -4,8 +4,8 @@ namespace Games;
 
 use function cli\line;
 use function cli\prompt;
-use function Engine\greeting as greeting;
 use function Engine\expression as expression;
+use function Engine\greeting as greeting;
 
 function calcGame(): bool
 {
@@ -39,4 +39,3 @@ function calcGame(): bool
 
     return true;
 }
-
