@@ -25,6 +25,9 @@
         "bin/brain-progression",
         "bin/brain-prime"
     ],
+    "files": [
+        "src/*"
+    ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.11"
     }
