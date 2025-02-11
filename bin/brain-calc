@@ -2,45 +2,8 @@
 
 <?php
 
-include '../vendor/autoload.php';
+include 'vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
-use KhanhIceTea\Twigeval\Calculator as Calculator;
+Games\calcGame();
 
-function expression($first, $second, $operation): string
-{
-    $calculator = new Calculator(null);
 
-    return $calculator->calculate("$first $operation $second");
-}
-
-$operations = ['+', '-', '*'];
-
-line('Welcome to the Brain Games!');
-$name = prompt('May I have your name?');
-line("Hello, $name!");
-line('What is the result of the expression?');
-
-$success = 0;
-foreach ($operations as $operation) {
-    $first = rand(1, 100);
-    $second = rand(1, 100);
-
-    $result = expression($first, $second, $operation);
-    $line = "Question: $first $operation $second";
-
-    line($line);
-    $answer = prompt('Your answer');
-
-    if ($answer == $result) {
-        $success++;
-        line('Correct!');
-    } else {
-        line("'$answer' is wrong answer ;(. Correct answer was '$result'");
-        line("Let's try again, $name!");
-    }
-}
-if ($success == count($operations)) {
-    line("Congratulations, $name!");
-}

@@ -5,7 +5,16 @@
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
-        }
+        },
+        "files": [
+            "src/Engine/functions.php",
+            "src/Games/calcGame.php",
+            "src/Games/evenGame.php",
+            "src/Games/gcdGame.php",
+            "src/Games/primeGame.php",
+            "src/Games/progressionGame.php",
+            "src/Cli.php"
+        ]
     },
     "authors": [
         {
@@ -24,9 +33,6 @@
         "bin/brain-gcd",
         "bin/brain-progression",
         "bin/brain-prime"
-    ],
-    "files": [
-        "src/*"
     ],
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.11"
