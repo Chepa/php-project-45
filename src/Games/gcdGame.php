@@ -5,6 +5,7 @@ namespace Games;
 use function cli\line;
 use function cli\prompt;
 use function Engine\greeting as greeting;
+use function Engine\gcd as gcd;
 
 function dcdGame(): bool
 {
@@ -17,8 +18,8 @@ function dcdGame(): bool
         $first = rand(1, 100);
         $second = rand(1, 100);
 
-        $questionResult = \gmp_gcd($first, $second);
-        $answer = prompt('Question: ' . $first . ' ' . $second, false, '');
+        $questionResult = gcd($first, $second);
+        $answer = prompt('Question: ' . $first . ' ' . $second, false, ' ');
         line('Your answer:' . $answer);
 
         if ($questionResult != $answer) {

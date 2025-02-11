@@ -37,3 +37,17 @@ function isPrime($num): bool
 
     return true;
 }
+
+function gcd($a, $b): int
+{
+    $smallVal = min($a, $b);
+    $gcd = 1;
+
+    for ($i = 1; $i <= $smallVal; $i++) {
+        if ($a % $i === 0 && $b % $i === 0) {
+            $gcd = $i;
+        }
+    }
+
+    return $gcd;
+}
