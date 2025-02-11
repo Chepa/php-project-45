@@ -18,7 +18,7 @@ function dcdGame(): bool
         $second = rand(1, 100);
 
         $questionResult = \gmp_gcd($first, $second);
-        $answer = prompt('Question: ' . $first . ' ' . $second);
+        $answer = prompt('Question: ' . $first . ' ' . $second, false, '');
         line('Your answer:' . $answer);
 
         if ($questionResult != $answer) {
