@@ -6,7 +6,7 @@ use function cli\line;
 use function cli\prompt;
 use function Engine\greeting as greeting;
 
-function dcdGame()
+function dcdGame(): bool
 {
     $name = greeting();
 
@@ -17,7 +17,7 @@ function dcdGame()
         $first = rand(1, 100);
         $second = rand(1, 100);
 
-        $questionResult = gmp_gcd($first, $second);
+        $questionResult = \gmp_gcd($first, $second);
         $answer = prompt('Question: ' . $first . ' ' . $second);
         line('Your answer:' . $answer);
 
