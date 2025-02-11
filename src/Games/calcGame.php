@@ -34,6 +34,9 @@ function calcGame(): bool
         }
     }
 
+    $line = sprintf("Congratulations, %s!", $name);
+    line($line);
+
     return true;
 }
 
