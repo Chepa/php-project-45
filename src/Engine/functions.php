@@ -23,10 +23,8 @@ function expression(int $first, int $second, string $operation): string
     return $calculator->calculate("$first $operation $second");
 }
 
-function isPrime($num): bool
+function isPrime(int $num): bool
 {
-    $num = (int)$num;
-
     if ($num < 2) {
         return false;
     }
