@@ -36,7 +36,7 @@ function evenGame(): bool
     return true;
 }
 
-function game($number, $answer): bool
+function game(int $number, string $answer): bool
 {
     if (($number % 2 == 0 && $answer == 'yes') || ($number % 2 !== 0 && $answer == 'no')) {
         return true;

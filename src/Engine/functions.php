@@ -16,7 +16,7 @@ function greeting(): string
     return $name;
 }
 
-function expression($first, $second, $operation): string
+function expression(int $first, int $second, string $operation): string
 {
     $calculator = new Calculator(null);
 
@@ -39,7 +39,7 @@ function isPrime($num): bool
     return true;
 }
 
-function gcd($a, $b): int
+function gcd(int $a, int $b): int
 {
     $smallVal = min($a, $b);
     $gcd = 1;
